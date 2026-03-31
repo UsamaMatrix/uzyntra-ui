@@ -18,6 +18,11 @@
   <img src="https://img.shields.io/badge/Status-Production Ready-success?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Security-Focused-blue?style=for-the-badge" />
 </p>
+<p align="center">
+  <img src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PRs-welcome-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/open--source-yes-blue?style=for-the-badge" />
+</p>
 
 ---
 
