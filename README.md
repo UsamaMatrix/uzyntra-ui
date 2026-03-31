@@ -1,61 +1,173 @@
-UZYNTRA UI is the operator dashboard for the UZYNTRA Rust API security gateway. It provides a professional control plane for monitoring security events, reviewing audit history, managing active mitigations, inspecting source reputation, and editing live policy settings.
+# 🛡️ UZYNTRA UI — Operator Control Console
 
-## Features
+<p align="center">
+  <img src="public/uzyntra-logo-mark.png" alt="UZYNTRA Logo" width="120"/>
+</p>
 
-- Dashboard with live operator metrics
-- Events explorer with filtering and detail inspection
-- Active mitigations management
-- Source reputation review and reset actions
-- Audit trail viewer
-- Policy management for:
-  - global rule modes
-  - route overrides
-  - route rate-limit overrides
-- UZYNTRA product branding and control console layout
+<p align="center">
+  <b>Advanced API Threat Intelligence & Control Platform UI</b>
+</p>
 
-## Stack
+<p align="center">
+  <a href="https://github.com/UsamaMatrix/uzyntra-ui">
+    <img src="https://img.shields.io/badge/UI-Next.js-black?style=for-the-badge&logo=next.js" />
+  </a>
+  <a href="https://github.com/UsamaMatrix/uzyntra-api-firewall">
+    <img src="https://img.shields.io/badge/Backend-Rust-orange?style=for-the-badge&logo=rust" />
+  </a>
+  <img src="https://img.shields.io/badge/Status-Production Ready-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Security-Focused-blue?style=for-the-badge" />
+</p>
 
-- Next.js App Router
-- React
-- Tailwind CSS
-- Browser-based admin API integration with the Rust backend
+---
 
-## Backend requirement
+## 🚀 Overview
 
-The Rust admin API must be running on:
+**UZYNTRA UI** is a professional operator dashboard built for controlling and monitoring the **UZYNTRA Rust API Firewall**.
 
-`127.0.0.1:9090`
+It provides a **real-time control plane** for:
 
-The current UI expects the admin token:
+- 📊 Monitoring security telemetry
+- 🚨 Inspecting attack events
+- 🛡️ Managing mitigations
+- 🧠 Tracking source reputation
+- 📜 Reviewing audit logs
+- ⚙️ Controlling security policy
 
-`dev-admin-token-1`
+---
 
-## Run locally
+## 🔗 Backend (Required)
+
+This UI connects to the Rust backend:
+
+👉 **UZYNTRA API Firewall (Backend Repo)**  
+https://github.com/UsamaMatrix/uzyntra-api-firewall
+
+> ⚠️ The backend **must be running** for the UI to function.
+
+---
+
+## ✨ Features
+
+- 📊 **Dashboard**
+  - Metrics overview (events, blocks, reputation)
+  - Recent activity monitoring
+
+- 🔍 **Events Explorer**
+  - Search & filter security events
+  - Inspect findings (SQLi, SSRF, etc.)
+
+- 🛡️ **Mitigation Control**
+  - Active block management
+  - Manual IP blocking with TTL
+
+- 🧠 **Reputation System**
+  - Suspicious source scoring
+  - Reset reputation entries
+
+- 📜 **Audit Trail**
+  - Full operator activity tracking
+  - Action history & accountability
+
+- ⚙️ **Policy Management**
+  - Global rule modes
+  - Route-based overrides
+  - Rate limiting controls
+
+---
+
+## 🎬 UI Preview (GIF)
+
+<p align="center">
+  <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="700"/>
+</p>
+
+---
+
+## 📸 Screenshots
+
+### 🏠 Dashboard
+![Dashboard](docs/screenshots/01-dashboard.png)
+
+### 🔍 Events Explorer
+![Events](docs/screenshots/02-events.png)
+
+### 🛡️ Mitigations
+![Mitigations](docs/screenshots/03-mitigations.png)
+
+### 🧠 Reputation
+![Reputation](docs/screenshots/04-reputation.png)
+
+### 📜 Audit Trail
+![Audits](docs/screenshots/05-audits.png)
+
+### ⚙️ Policy Management
+![Policy](docs/screenshots/06-policy.png)
+
+---
+
+## 🧰 Tech Stack
+
+- ⚛️ Next.js (App Router)
+- 🎨 Tailwind CSS
+- 🔗 REST API integration
+- ⚡ Optimized operator UI/UX
+- 🛡️ Security-first design
+
+---
+
+## 📦 Installation
 
 ```bash
+git clone https://github.com/UsamaMatrix/uzyntra-ui.git
+cd uzyntra-ui
 npm install
-npm run dev
 ````
 
-Then open:
+---
 
-`http://localhost:3000`
+## ▶️ Running the App
 
-## Key Pages
+```bash
+npm run dev
+```
 
-* `/` Dashboard
-* `/events` Events Explorer
-* `/mitigations` Mitigations
-* `/reputation` Reputation
-* `/audits` Audit Trail
-* `/policy` Policy Management
+Open in browser:
 
-## Project Structure
+```
+http://localhost:3000
+```
+
+---
+
+## 🔌 Backend Configuration
+
+Make sure backend is running at:
+
+```
+http://127.0.0.1:9090
+```
+
+Admin token used:
+
+```
+dev-admin-token-1
+```
+
+You can change this inside:
+
+```
+src/lib/api.js
+```
+
+---
+
+## 📁 Project Structure
 
 ```text
 src/
  ├── app/
- │    ├── page.js
+ │    ├── page.js                # Dashboard
  │    ├── events/page.js
  │    ├── mitigations/page.js
  │    ├── reputation/page.js
@@ -78,18 +190,59 @@ src/
       └── format.js
 ```
 
-## Notes
+---
 
-This UI is designed to work with the UZYNTRA Rust API Firewall backend and is intended as the administrative threat control console for the platform.
+## 🧪 Development Notes
 
-## Roadmap
-
-* confirmation modals
-* richer event analytics
-* charts and trend views
-* advanced policy UX
-* auth hardening
-* SaaS-ready tenant controls
-
+* Sidebar is **fixed layout (non-scrolling)**
+* Main panel uses **independent scroll**
+* Tables support **horizontal overflow**
+* UI is optimized for **operator workflows**
 
 ---
+
+## 🧭 Roadmap
+
+* 🔐 Authentication & RBAC
+* 📊 Analytics dashboards
+* 📈 Charts & threat trends
+* 🌐 SaaS multi-tenant support
+* 🔔 Alerting & notifications
+
+---
+
+## 🤝 Contribution
+
+Pull requests are welcome.
+
+If you're building on top of UZYNTRA, feel free to fork and extend.
+
+---
+
+## 👨‍💻 Author
+
+**[Muhammad Usama](https://www.linkedin.com/in/usamamatrix/)**
+Cyber Security Analyst & Rust Backend Engineer
+
+---
+
+## ⭐ Support
+
+If you like this project:
+
+* ⭐ Star the repo
+* 🍴 Fork it
+* 🚀 Build something on top of it
+
+---
+
+## 🔗 Related Repository
+
+👉 Backend:
+[https://github.com/UsamaMatrix/uzyntra-api-firewall](https://github.com/UsamaMatrix/uzyntra-api-firewall)
+
+---
+
+## 🛡️ UZYNTRA
+
+> *Control. Observe. Defend.*
