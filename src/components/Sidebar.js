@@ -22,7 +22,7 @@ export default function Sidebar() {
         <div className="flex items-center gap-3">
           <div className="brand-glow overflow-hidden rounded-2xl bg-white/5 p-1">
             <Image
-              src="/uzyntra-logo.png"
+              src="/uzyntra-logo-mark.png"
               alt="UZYNTRA"
               width={52}
               height={52}
