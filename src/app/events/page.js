@@ -181,23 +181,23 @@ export default function EventsPage() {
             </div>
           }
         >
-          <div className="overflow-x-auto">
-            <table className="min-w-full text-left text-sm">
+          <div className="table-wrap">
+            <table className="table-ui">
               <thead>
-                <tr className="border-b border-slate-200 text-slate-500">
-                  <th className="px-3 py-3 font-medium">Time</th>
-                  <th className="px-3 py-3 font-medium">Source IP</th>
-                  <th className="px-3 py-3 font-medium">Method</th>
-                  <th className="px-3 py-3 font-medium">Path</th>
-                  <th className="px-3 py-3 font-medium">Rule</th>
-                  <th className="px-3 py-3 font-medium">Severity</th>
-                  <th className="px-3 py-3 font-medium">Mode</th>
+                <tr>
+                  <th>Time</th>
+                  <th>Source IP</th>
+                  <th>Method</th>
+                  <th>Path</th>
+                  <th>Rule</th>
+                  <th>Severity</th>
+                  <th>Mode</th>
                 </tr>
               </thead>
               <tbody>
                 {tableRows.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="px-3 py-8 text-center text-slate-500">
+                    <td colSpan={7} className="py-8 text-center text-slate-500">
                       No events found
                     </td>
                   </tr>
@@ -210,16 +210,20 @@ export default function EventsPage() {
                       <tr
                         key={row.request_id}
                         onClick={() => setSelected(row)}
-                        className={`cursor-pointer border-b border-slate-100 align-top transition ${
+                        className={`cursor-pointer align-top transition ${
                           active ? "bg-slate-50" : "hover:bg-slate-50/70"
                         }`}
                       >
-                        <td className="px-3 py-3">{formatTimestamp(row.timestamp)}</td>
-                        <td className="px-3 py-3">{row.source_ip}</td>
-                        <td className="px-3 py-3">{row.method}</td>
-                        <td className="px-3 py-3">{row.path}</td>
-                        <td className="px-3 py-3">{finding?.rule_id || "—"}</td>
-                        <td className="px-3 py-3">
+                        <td>{formatTimestamp(row.timestamp)}</td>
+                        <td>{row.source_ip}</td>
+                        <td>{row.method}</td>
+                        <td>
+                          <div className="max-w-xs truncate sm:max-w-sm lg:max-w-md">
+                            {row.path}
+                          </div>
+                        </td>
+                        <td>{finding?.rule_id || "—"}</td>
+                        <td>
                           {finding?.severity ? (
                             <Badge className={severityClasses(finding.severity)}>
                               {finding.severity}
@@ -228,7 +232,7 @@ export default function EventsPage() {
                             "—"
                           )}
                         </td>
-                        <td className="px-3 py-3">
+                        <td>
                           {finding?.mode ? (
                             <Badge className={modeClasses(finding.mode)}>
                               {finding.mode}
@@ -245,7 +249,7 @@ export default function EventsPage() {
             </table>
           </div>
 
-          <div className="mt-4 flex items-center justify-between">
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-xs text-slate-500">
               Offset: {filters.offset} • Limit: {filters.limit}
             </p>

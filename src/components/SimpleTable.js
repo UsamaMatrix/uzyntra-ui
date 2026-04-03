@@ -25,7 +25,10 @@ export default function SimpleTable({
             <tr key={idx}>
               {columns.map((column) => (
                 <td key={column.key}>
-                  <div className="max-w-[220px] truncate" title={String(row[column.key] || "")}>
+                  <div
+                    className="max-w-xs truncate sm:max-w-sm lg:max-w-md"
+                    title={String(row[column.key] || "")}
+                  >
                     {column.render ? column.render(row) : row[column.key]}
                   </div>
                 </td>

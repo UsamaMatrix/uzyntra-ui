@@ -223,7 +223,7 @@ export default function AuditsPage() {
                 </table>
               </div>
 
-              <div className="mt-4 flex items-center justify-between">
+              <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <p className="text-xs text-slate-500">
                   Offset: {filters.offset} • Limit: {filters.limit}
                 </p>
