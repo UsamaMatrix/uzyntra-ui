@@ -143,6 +143,7 @@ a {
 .table-wrap {
   overflow-x: auto;
   border-radius: 1rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table-ui {
@@ -170,4 +171,15 @@ a {
 
 .table-ui tbody tr:hover {
   background: rgba(15, 23, 42, 0.025);
+}
+
+@media (max-width: 640px) {
+  .table-ui {
+    font-size: 0.85rem;
+  }
+
+  .table-ui thead th,
+  .table-ui tbody td {
+    padding: 0.7rem 0.7rem;
+  }
 }
